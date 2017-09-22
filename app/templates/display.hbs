@@ -1,0 +1,27 @@
+<div id="header"><h1>BugResolver</h1></div>
+<div id="wraper" align="center">
+  {{linkTo 'HOME' 'index' class='home'}}
+  {{linkTo 'DISPLAY' 'display' class='home'}}
+  {{linkTo 'EDIT' 'edit' class='home'}}
+</div>
+<div id="bug" align="center">
+  <div id="form-display"> 
+    <h3 id="form-head">View Bug Details</h3> 
+    <table>
+      <thead>
+        <tr><th>Status</th><th>Bug Id</th><th>Hours Worked</th><th>Description</th><th>Queries</th></tr>
+      </thead>
+      <tbody>
+        {{#each  model as |item|}}
+           <tr>
+           <td>{{input type="checkbox" checked=item.isActive class="toggle"}}</td>
+           <td>{{item.bugid}}</td>
+           <td>{{item.hours}}</td>
+           <td>{{item.description }}</td>
+           <td>{{item.query}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

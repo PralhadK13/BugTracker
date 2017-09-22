@@ -1,0 +1,35 @@
+
+<div id="header"><h1>BugResolver</h1></div>
+             <div id="wraper" align="center">
+      {{linkTo 'HOME' 'index' class='home'}}
+      {{linkTo 'DISPLAY' 'display' class='home'}}
+      {{linkTo 'EDIT' 'edit' class='home'}}
+      </div>
+      <div id="bug" align="center">
+     
+        {{outlet}}
+      </div>
+      <div id="footer">
+      
+      </div>
+{{outlet}}
+ <div id="form-edit"> 
+        <h3 id="form-head">Edit Bug Details</h3> 
+        <div id="tbl"> 
+      <table>
+      <thead>
+      <tr><th>Bug Id</th><th>Hours Worked</th><th>Description</th><th>Queries</th></tr>
+      </thead>
+      <tbody>
+      {{#each  model as |item|}}
+      <tr><td> {{input type="text" class="edit" value=item.bugid}}</td>
+      <td> {{input type="text" value=item.hours }}</td>
+      <td> {{textarea class="edit" value=item.description }}</td>
+      <td> {{textarea class="edit" value=item.query }}</td></tr>
+      {{/each}}
+
+      </tbody>
+      </table>
+      </div>
+      <input type="button" id="addrecord" {{ action 'updateRecord' }}  value="UPDATE" title="UPDATE"/>
+      </div>
